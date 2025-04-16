@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    background-color: #fefefe;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .container {
+    text-align: center;
+    z-index: 1;
+  }
+  
+  .prank-image {
+    width: 250px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .question {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .buttons {
+    position: relative;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 18px;
+    margin: 0 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, left 0.3s ease, top 0.3s ease;
+    position: relative;
+  }
+  
+  #yes-btn {
+    background-color: #28a745;
+    color: white;
+    z-index: 2;
+  }
+  
+  #no-btn {
+    background-color: #dc3545;
+    color: white;
+    z-index: 3;
+  }
+  
+  /* Pagina surpriză */
+  .surpriza {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: url('poza-mea.jpg') no-repeat center center/cover;
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+  }
+  

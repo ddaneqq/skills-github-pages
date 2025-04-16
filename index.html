@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Секрет</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Pagina principală -->
+  <div class="container" id="main-page">
+    <img src="https://avatars.dzeninfra.ru/get-zen_doc/30884/pub_5cc0291e0a13b900b4b7f04b_5cc02a1d9f4d1600b4590c42/scale_1200" alt="Surpriză!" class="prank-image" />
+    <p class="question">Не заглядывай пожалуйста</p>
+    <div class="buttons">
+      <button id="no-btn">Посмотреть</button>
+      <button id="yes-btn">Не смотреть</button>
+    </div>
+  </div>
+
+  <!-- Pagina surpriză -->
+  <div class="surpriza" id="surprise-page">
+    <div class="overlay">
+    Теперь у меня есть все данные с твоего телефона))
+    </div>
+  </div>
+
+  <script>
+    const daBtn = document.getElementById('no-btn');   // DA → fuge
+    const nuBtn = document.getElementById('yes-btn');  // NU → deschide surpriza
+    const mainPage = document.getElementById('main-page');
+    const surprisePage = document.getElementById('surprise-page');
+
+    let daScale = 1;
+    let nuScale = 1;
+
+    daBtn.addEventListener('click', () => {
+      if (daScale > 0.5) {
+        daScale *= 0.9;
+        daBtn.style.transform = `scale(${daScale})`;
+      }
+
+      nuScale *= 1.1;
+      nuBtn.style.transform = `scale(${nuScale})`;
+
+      const buttonWidth = daBtn.offsetWidth * daScale;
+      const buttonHeight = daBtn.offsetHeight * daScale;
+
+      const maxX = window.innerWidth - buttonWidth;
+      const maxY = window.innerHeight - buttonHeight;
+
+      const randomX = Math.random() * maxX;
+      const randomY = Math.random() * maxY;
+
+      daBtn.style.position = 'fixed';
+      daBtn.style.left = `${randomX}px`;
+      daBtn.style.top = `${randomY}px`;
+    });
+
+    nuBtn.addEventListener('click', () => {
+      mainPage.style.display = 'none';
+      surprisePage.style.display = 'flex';
+    });
+  </script>
+
+</body>
+</html>
